@@ -33,6 +33,10 @@ class ClienteTest extends \PHPUnit\Framework\TestCase{
           die("Error de conexión: " . $conn->connect_error);
         }
 
+        //reset de la tabla de pruebas
+        $sqlPrueba = "delete from Clientes;";
+        $resultado = $conn->query($sqlPrueba);
+        
         //Primera tanda
         //Primero calculo cuantas lineas hay en la tabla
         $sqlPrueba = "select * from Clientes;";
